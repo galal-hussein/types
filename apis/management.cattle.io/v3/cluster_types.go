@@ -302,3 +302,8 @@ type IngressCapabilities struct {
 	IngressProvider      string `json:"ingressProvider,omitempty"`
 	CustomDefaultBackend bool   `json:"customDefaultBackend,omitempty"`
 }
+
+type RotateCertificateInput struct {
+	CACertificates bool     `json:"caCertificates,omitempty"`
+	Services       []string `json:"services,omitempty" norman:"type=enum,options=etcd|kubelet|kube-apiserver|kube-proxy|kube-scheduler|kube-controller-manager"`
+}
